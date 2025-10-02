@@ -40,7 +40,7 @@ public class playerScript : MonoBehaviour
         {
             transform.position = new Vector3(-12f, transform.position.y, 5);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         { 
             Instantiate (bullet, this.transform.position, this.transform.rotation); 
         }

@@ -20,16 +20,24 @@ public class enemyShip : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D Other)
+   /* private void OnTriggerEnter2D(Collider2D Other)
     {
-        if(Other.tag == "player") 
+        if(Other.tag == "bullet") 
         {
 
             Other.transform.GetComponent<playerScript>().TakeDamage();
 
             Debug.Log("Hit: " + Other);
+
+            Destroy(gameObject);
         }
+    }*/
+    public void TakeDamage()
+    {
+
+        Destroy(gameObject);
     }
+
 
 }
 
