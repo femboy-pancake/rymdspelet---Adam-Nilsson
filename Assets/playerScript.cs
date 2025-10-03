@@ -3,7 +3,7 @@ using UnityEngine;
 public class playerScript : MonoBehaviour
 {
     public float playerSpeed = 1.0f;
-    public GameObject bullet;
+    public GameObject Bullet;
     public int health = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,14 +23,8 @@ public class playerScript : MonoBehaviour
         {
             transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(Vector3.up * playerSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(Vector3.down * playerSpeed * Time.deltaTime);
-        }
+       
+       
 
         if (transform.position.x <= -12)
         {
@@ -40,9 +34,9 @@ public class playerScript : MonoBehaviour
         {
             transform.position = new Vector3(-12f, transform.position.y, 5);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) 
         { 
-            Instantiate (bullet, this.transform.position, this.transform.rotation); 
+            Instantiate (Bullet, this.transform.position, this.transform.rotation); 
         }
     }
    public void TakeDamage()

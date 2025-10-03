@@ -3,6 +3,8 @@ using UnityEngine;
 public class enemyShip : MonoBehaviour
 {
     public float speed;
+    public GameObject EnemyBullet;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,21 +19,25 @@ public class enemyShip : MonoBehaviour
         if (transform.position.y <= -5.5f)
         {
             transform.position = new Vector3(Random.Range(-8, 8), 5.5f, 0);
+
         }
+
+        Instantiate(EnemyBullet, this.transform.position, this.transform.rotation);
+
 
     }
-   /* private void OnTriggerEnter2D(Collider2D Other)
-    {
-        if(Other.tag == "bullet") 
-        {
+    /* private void OnTriggerEnter2D(Collider2D Other)
+     {
+         if(Other.tag == "bullet") 
+         {
 
-            Other.transform.GetComponent<playerScript>().TakeDamage();
+             Other.transform.GetComponent<playerScript>().TakeDamage();
 
-            Debug.Log("Hit: " + Other);
+             Debug.Log("Hit: " + Other);
 
-            Destroy(gameObject);
-        }
-    }*/
+             Destroy(gameObject);
+         }
+     }*/
     public void TakeDamage()
     {
 
