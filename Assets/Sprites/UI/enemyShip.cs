@@ -1,14 +1,16 @@
+using System.Collections;
 using UnityEngine;
 
 public class enemyShip : MonoBehaviour
 {
     public float speed;
     public GameObject EnemyBullet;
+    public float laserCooldown;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        StartCoroutine(Bullet());
     }
 
     // Update is called once per frame
@@ -22,22 +24,34 @@ public class enemyShip : MonoBehaviour
 
         }
 
-        Instantiate(EnemyBullet, this.transform.position, this.transform.rotation);
+        
+
+        
 
 
     }
-    /* private void OnTriggerEnter2D(Collider2D Other)
+    IEnumerator Bullet()
+    {
+        while (laserCooldown > 0)
+            
+        {
+            Instantiate(EnemyBullet, this.transform.position, this.transform.rotation);
+            yield return new WaitForSeconds(laserCooldown);
+        }
+        yield return null;
+    }
+     private void OnTriggerEnter2D(Collider2D Other)
      {
          if(Other.tag == "bullet") 
          {
 
-             Other.transform.GetComponent<playerScript>().TakeDamage();
+             TakeDamage();
 
              Debug.Log("Hit: " + Other);
 
              Destroy(gameObject);
          }
-     }*/
+     }
     public void TakeDamage()
     {
 

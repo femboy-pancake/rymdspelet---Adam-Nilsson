@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
@@ -42,7 +43,13 @@ public class playerScript : MonoBehaviour
    public void TakeDamage()
     {
         health--;
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
+    
+
 }
 
 

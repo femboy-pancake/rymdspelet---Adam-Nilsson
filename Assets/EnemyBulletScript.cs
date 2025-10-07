@@ -13,7 +13,7 @@ public class EnemyBulletScript : MonoBehaviour
     void Update()
     {
         {
-            transform.Translate(Vector3.up * bulletSpeed * Time.deltaTime);
+            transform.Translate(Vector3.down * bulletSpeed * Time.deltaTime);
 
             if (transform.position.y > 8)
             {
@@ -26,7 +26,7 @@ public class EnemyBulletScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D Other)
     {
-        if (Other.tag == "player")
+        if (Other.tag == "Player")
         {
 
             Other.transform.GetComponent<playerScript>().TakeDamage();
