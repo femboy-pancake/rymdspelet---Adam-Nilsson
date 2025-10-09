@@ -47,9 +47,40 @@ public class playerScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    
+        
 
+    }
+
+    public void Life(int playerHealth)
+    {
+        Debug.Log("Life");
+        
+        if (playerHealth== 3)
+        {
+            GameObject.Find("life 3").SetActive(true);
+            GameObject.Find("life 2").SetActive(true);
+            GameObject.Find("life 1").SetActive(true);
+        }
+
+        else if (playerHealth == 2)
+        {
+            GameObject.Find("life 3").SetActive(false);
+            GameObject.Find("life 2").SetActive(true);
+            GameObject.Find("life 1").SetActive(true);
+        }
+        else if (playerHealth == 1)
+        {
+            GameObject.Find("life 3").SetActive(false);
+            GameObject.Find("life 2").SetActive(false);
+            GameObject.Find("life 1").SetActive(true);
+        }
+        else if (playerHealth == 0)
+        {
+            GameObject.Find("life 3").SetActive(false);
+            GameObject.Find("life 2").SetActive(false);
+            GameObject.Find("life 1").SetActive(false);
+        }
+    }
 }
 
 
