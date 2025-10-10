@@ -6,8 +6,18 @@ public class playerScript : MonoBehaviour
     public float playerSpeed = 1.0f;
     public GameObject Bullet;
     public int health = 3;
-
+    private GameObject Life1;
+    private GameObject Life2;
+    private GameObject Life3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        Life1 = GameObject.Find("life 1");
+        Life2 = GameObject.Find("life 2");
+        Life3 = GameObject.Find("life 3");
+    }
+
     void Start()
     {
         
@@ -46,8 +56,33 @@ public class playerScript : MonoBehaviour
         if (health == 0)
         {
             Destroy(gameObject);
+
         }
-        
+        if (health == 3)
+        {
+            Life3.SetActive(true);
+            Life2.SetActive(true);
+            Life1.SetActive(true);
+        }
+
+        else if (health == 2)
+        {
+            Life3.SetActive(false);
+            Life2.SetActive(true);
+            Life1.SetActive(true);
+        }
+        else if (health == 1)
+        {
+            Life3.SetActive(false);
+            Life2.SetActive(false);
+            Life1.SetActive(true);
+        }
+        else if (health == 0)
+        {
+            Life3.SetActive(false);
+            Life2.SetActive(false);
+            Life1.SetActive(false);
+        }
 
     }
 
