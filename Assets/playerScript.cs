@@ -50,9 +50,9 @@ public class playerScript : MonoBehaviour
             Instantiate (Bullet, this.transform.position, this.transform.rotation); 
         }
     }
-   public void TakeDamage()
+   public void TakeDamage(int Damage)
     {
-        health--;
+        health = health - Damage;
         if (health == 0)
         {
             Destroy(gameObject);

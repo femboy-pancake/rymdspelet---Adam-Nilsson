@@ -9,7 +9,7 @@ public class EnemyBulletScript : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
-    // Update is called once per frame
+    // Update is called once per frame  
     void Update()
     {
         {
@@ -29,7 +29,7 @@ public class EnemyBulletScript : MonoBehaviour
         if (Other.tag == "Player")
         {
 
-            Other.transform.GetComponent<playerScript>().TakeDamage();
+            Other.transform.GetComponent<playerScript>().TakeDamage(1);
 
             Debug.Log("Hit: " + Other);
 

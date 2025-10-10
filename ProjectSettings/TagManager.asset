@@ -7,6 +7,8 @@ TagManager:
   - enemy
   - bullet
   - EnemyBullet
+  - EnemyStrongBullet
+  - strongBullet
   layers:
   - Default
   - TransparentFX

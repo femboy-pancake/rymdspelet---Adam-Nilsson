@@ -1,24 +1,23 @@
 using UnityEngine;
-public class MeteorBig : MonoBehaviour
+
+public class EnemyStrongBulletScript : MonoBehaviour
 
 {
-    public float speed;
-
+    public float bulletSpeed = 5.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        Destroy(gameObject, 15);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
+        transform.Translate(Vector3.down * bulletSpeed * Time.deltaTime);
 
-        if (transform.position.y <= -5.5f)
+        if (transform.position.y > 8)
         {
-            transform.position = new Vector3(Random.Range(-8, 8), 5.5f, 0);
-
+            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D Other)
@@ -26,11 +25,12 @@ public class MeteorBig : MonoBehaviour
         if (Other.tag == "Player")
         {
 
-            Other.transform.GetComponent<playerScript>().TakeDamage(1);
+            Other.transform.GetComponent<playerScript>().TakeDamage(2);
 
             Debug.Log("Hit: " + Other);
 
-            
+            Destroy(gameObject);
+
         }
     }
 }
