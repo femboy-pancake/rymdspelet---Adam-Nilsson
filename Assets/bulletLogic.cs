@@ -15,14 +15,14 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
         {
             transform.Translate(Vector3.up * bulletSpeed * Time.deltaTime);
 
             if (transform.position.y > 8)
             {
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
 
         }
@@ -34,15 +34,16 @@ public class Projectile : MonoBehaviour
         if (Other.tag == "enemy")
         {
 
+
             Other.transform.GetComponent<enemyShip>().TakeDamage();
 
             Debug.Log("Hit: " + Other);
-        
+
             Destroy(gameObject);
 
         }
+      
+
     }
-
-
 
 }

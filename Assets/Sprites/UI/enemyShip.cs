@@ -1,16 +1,22 @@
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 public class enemyShip : MonoBehaviour
 {
     public float speed;
     public GameObject EnemyBullet;
     public float laserCooldown;
+    public GameObject txtobj;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(Bullet());
+    }
+
+    private void Awake()
+    {
+        txtobj = GameObject.Find("Point Counter");
     }
 
     // Update is called once per frame
@@ -32,7 +38,7 @@ public class enemyShip : MonoBehaviour
     }
     IEnumerator Bullet()
     {
-        while (laserCooldown > 0)
+        while (laserCooldown > 3)
             
         {
             Instantiate(EnemyBullet, this.transform.position, this.transform.rotation);
@@ -42,19 +48,11 @@ public class enemyShip : MonoBehaviour
     }
      private void OnTriggerEnter2D(Collider2D Other)
      {
-         if(Other.tag == "bullet") 
-         {
-
-             TakeDamage();
-
-             Debug.Log("Hit: " + Other);
-
-             Destroy(gameObject);
-         }
+         
      }
     public void TakeDamage()
     {
-
+        txtobj.GetComponent<PointCounterScript>().Add_Points(1);
         Destroy(gameObject);
     }
 

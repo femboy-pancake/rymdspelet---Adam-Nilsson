@@ -1,17 +1,25 @@
 using UnityEngine;
 using System.Collections;
-
+using TMPro;
 public class EnemyShipStrong : MonoBehaviour
 {
     public float speed;
-    public GameObject EnemyStrongBulletScript   ;
+    public GameObject EnemyStrongBulletScript;
     public float StrongBulletCooldown;
+    public GameObject txtobj;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(StrongEnemyBullet());
     }
-       
+    private void Awake()
+    {
+        txtobj = GameObject.Find("Point Counter");
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -36,5 +44,13 @@ public class EnemyShipStrong : MonoBehaviour
         yield return null;
 
     }
+    private void OnTriggerEnter2D(Collider2D Other)
+    {
 
+    }
+    public void TakeDamage()
+    {
+        txtobj.GetComponent<PointCounterScript>().Add_Points(2);
+        Destroy(gameObject);
+    }
 }
