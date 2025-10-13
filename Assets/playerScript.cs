@@ -53,36 +53,49 @@ public class playerScript : MonoBehaviour
    public void TakeDamage(int Damage)
     {
         health = health - Damage;
-        if (health == 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
 
         }
         if (health == 3)
         {
+            if (GameObject.Find("Life 3") != null)
             Life3.SetActive(true);
-            Life2.SetActive(true);
-            Life1.SetActive(true);
+            if (GameObject.Find("Life 2") != null)
+                Life2.SetActive(true);
+            if (GameObject.Find("Life 1") != null)
+                Life1.SetActive(true);
         }
 
         else if (health == 2)
         {
-            Life3.SetActive(false);
-            Life2.SetActive(true);
-            Life1.SetActive(true);
+            if (GameObject.Find("Life 3") != null)
+                Life3.SetActive(false);
+            if (GameObject.Find("Life 2") != null)
+                Life2.SetActive(true);
+            if (GameObject.Find("Life 1") != null)
+                Life1.SetActive(true);
         }
         else if (health == 1)
         {
-            Life3.SetActive(false);
-            Life2.SetActive(false);
-            Life1.SetActive(true);
+            if (GameObject.Find("Life 3") != null)
+                Life3.SetActive(false);
+            if (GameObject.Find("Life 2") != null)
+                Life2.SetActive(false);
+            if (GameObject.Find("Life 1") != null)
+                Life1.SetActive(true);
         }
-        else if (health == 0)
+        else if (health <= 0)
         {
-            Life3.SetActive(false);
-            Life2.SetActive(false);
+            if (GameObject.Find("Life 3") != null)
+                Life3.SetActive(false);
+            if (GameObject.Find("Life 2") != null)
+                Life2.SetActive(false);
+                        if (GameObject.Find("Life 1") != null)
             Life1.SetActive(false);
         }
+        Life(health);
 
     }
 
@@ -92,30 +105,43 @@ public class playerScript : MonoBehaviour
         
         if (playerHealth== 3)
         {
-            GameObject.Find("life 3").SetActive(true);
-            GameObject.Find("life 2").SetActive(true);
-            GameObject.Find("life 1").SetActive(true);
+            if (GameObject.Find("life 3") != null)
+                GameObject.Find("life 3").SetActive(true);
+            if (GameObject.Find("life 2") != null)
+                GameObject.Find("life 2").SetActive(true);
+            if (GameObject.Find("life 1") != null)
+                GameObject.Find("life 1").SetActive(true);
         }
 
         else if (playerHealth == 2)
         {
-            GameObject.Find("life 3").SetActive(false);
-            GameObject.Find("life 2").SetActive(true);
-            GameObject.Find("life 1").SetActive(true);
+            if (GameObject.Find("life 3") != null)
+                GameObject.Find("life 3").SetActive(false);
+            if (GameObject.Find("life 2") != null)
+                GameObject.Find("life 2").SetActive(true);
+            if (GameObject.Find("life 1") != null)
+                GameObject.Find("life 1").SetActive(true);
         }
         else if (playerHealth == 1)
         {
-            GameObject.Find("life 3").SetActive(false);
-            GameObject.Find("life 2").SetActive(false);
-            GameObject.Find("life 1").SetActive(true);
+            if (GameObject.Find("life 3") != null)
+                GameObject.Find("life 3").SetActive(false);
+            if (GameObject.Find("life 2") != null)
+                GameObject.Find("life 2").SetActive(false);
+            if (GameObject.Find("life 1") != null)
+                GameObject.Find("life 1").SetActive(true);
         }
-        else if (playerHealth == 0)
+        else if (playerHealth <= 0)
         {
-            GameObject.Find("life 3").SetActive(false);
-            GameObject.Find("life 2").SetActive(false);
-            GameObject.Find("life 1").SetActive(false);
+            if (GameObject.Find("life 3") != null)
+                GameObject.Find("life 3").SetActive(false);
+            if (GameObject.Find("life 2") != null)
+                GameObject.Find("life 2").SetActive(false);
+            if (GameObject.Find("life 1") != null)
+                GameObject.Find("life 1").SetActive(false);
         }
     }
+
 }
 
 
