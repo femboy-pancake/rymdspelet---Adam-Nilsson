@@ -25,13 +25,13 @@ public class EnemyShipSpawner : MonoBehaviour
     {
         while (true)
         {
-            if (enemyCounter < 50 && GameObject.Find("Player") != null)
+            if (enemyCounter < 47 && GameObject.Find("Player") != null)
             {
                 Instantiate(enemyShip, new Vector3(Random.Range(-8, 8), 7, 0), Quaternion.identity);
 
                 enemyCounter++;
 
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(2);
 
             }
 

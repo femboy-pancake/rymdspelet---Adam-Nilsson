@@ -104,7 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   EnemyBullet: {fileID: 9013628166355461021, guid: 4967068dd4c2a174db79f4a1ba937bd7, type: 3}
-  laserCooldown: 1
+  laserCooldown: 2
+  txtobj: {fileID: 0}
 --- !u!61 &8970938649435733043
 BoxCollider2D:
   m_ObjectHideFlags: 0

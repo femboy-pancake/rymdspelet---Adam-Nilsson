@@ -38,7 +38,7 @@ public class enemyShip : MonoBehaviour
     }
     IEnumerator Bullet()
     {
-        while (laserCooldown > 3)
+        while (laserCooldown > 0)
             
         {
             Instantiate(EnemyBullet, this.transform.position, this.transform.rotation);

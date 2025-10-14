@@ -42,8 +42,18 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
-      
 
+        else if (Other.tag == "StrongEnemy")
+        {
+
+
+            Other.transform.GetComponent<EnemyShipStrong>().TakeDamage();
+
+            Debug.Log("Hit: " + Other);
+
+            Destroy(gameObject);
+
+        }
     }
 
 }
