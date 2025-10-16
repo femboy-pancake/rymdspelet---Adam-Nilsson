@@ -12,6 +12,7 @@ TagManager:
   - PointCounter
   - StrongEnemy
   - Shield
+  - ShieldDrop
   layers:
   - Default
   - TransparentFX

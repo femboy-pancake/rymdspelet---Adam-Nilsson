@@ -1,16 +1,9 @@
 using UnityEngine;
-
-public class ShieldPickUpScript : MonoBehaviour
+[System.Serializable]
+public class ShieldPickUpScript
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject ShieldPickup;
+    [Range(0, 100)] public float dropchance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
