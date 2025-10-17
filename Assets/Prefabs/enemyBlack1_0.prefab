@@ -108,9 +108,9 @@ MonoBehaviour:
   txtobj: {fileID: 0}
   lootTable:
   - ShieldPickup: {fileID: 5799474156443408344, guid: 7bc08d3ef35068a4aaf9dcfd8f705162, type: 3}
-    dropchance: 50
+    dropchance: 100
   - ShieldPickup: {fileID: 8022460815760480853, guid: 2b3b331fa45d3154486c4c23257b11c4, type: 3}
-    dropchance: 50
+    dropchance: 0
 --- !u!61 &8970938649435733043
 BoxCollider2D:
   m_ObjectHideFlags: 0

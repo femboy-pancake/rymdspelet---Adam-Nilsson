@@ -23,6 +23,7 @@ public class playerScript : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -50,6 +51,7 @@ public class playerScript : MonoBehaviour
             Instantiate (Bullet, this.transform.position, this.transform.rotation); 
         }
     }
+
    public void TakeDamage(int Damage)
     {
         health = health - Damage;
@@ -141,7 +143,9 @@ public class playerScript : MonoBehaviour
                 GameObject.Find("life 1").SetActive(false);
         }
     }
-
+    
+        
+    
 }
 
 

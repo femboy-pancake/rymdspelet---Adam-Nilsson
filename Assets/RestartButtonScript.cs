@@ -9,7 +9,11 @@ public class RestartButtonScript : MonoBehaviour
     {
     
         SceneManager.LoadScene("SampleScene");
-        //
+        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            
+        }
 
     }
 }
