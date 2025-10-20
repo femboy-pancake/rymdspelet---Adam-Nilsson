@@ -13,7 +13,11 @@ public class ShieldScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
 
+        }
     }
     public void TakeDamage(int Damage)
     {
@@ -24,12 +28,36 @@ public class ShieldScript : MonoBehaviour
 
         }
     }
-   // private void OnTriggerEnter2D(Collider2D Other)
-    //{
-       // if (Other.tag == "ShieldDrop")
-      //  {
-           // Other.transform.GetComponent<ShieldDropScript>().//gain power();
+    private void OnTriggerEnter2D(Collider2D Other)
+    {
+        if (Other.tag == "EnemyBullet")
+        {
+
+
+            Other.transform.GetComponent<enemyShip>().TakeDamage();
+
+            Debug.Log("Hit: " + Other);
+
+            Destroy(gameObject);
+
         }
 
-   // } }
+        else if (Other.tag == "EnemyStrongBullet")
+        {
+
+
+            Other.transform.GetComponent<EnemyShipStrong>().TakeDamage();
+
+            Debug.Log("Hit: " + Other);
+
+            Destroy(gameObject);
+
+        }
+
+
+    }
+}
+
+
+   
 

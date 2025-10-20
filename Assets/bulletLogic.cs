@@ -54,6 +54,8 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
+        //if (Other.tag != "Player" || Other.tag != "Laser")
+            
     }
 
 }

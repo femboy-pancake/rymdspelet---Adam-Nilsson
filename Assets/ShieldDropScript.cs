@@ -25,7 +25,7 @@ public class ShieldDropScript : MonoBehaviour
         if (Other.tag == "Player")
         {
 
-            Other.transform.GetComponent<playerScript>().TakeDamage(0);
+            Other.transform.GetComponent<playerScript>().GiveShield();
 
             Debug.Log("Hit: " + Other);
 

@@ -144,7 +144,10 @@ public class playerScript : MonoBehaviour
         }
     }
     
-        
+    public void GiveShield()
+    {
+
+    }
     
 }
 
