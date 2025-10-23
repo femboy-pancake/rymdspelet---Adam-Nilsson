@@ -4,7 +4,10 @@ public class ShieldDropScript : MonoBehaviour
 
 
 
+
+
 {
+    public GameObject Shield;
     public float speed;
 
 

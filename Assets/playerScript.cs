@@ -9,6 +9,7 @@ public class playerScript : MonoBehaviour
     private GameObject Life1;
     private GameObject Life2;
     private GameObject Life3;
+    public GameObject Shield;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -20,7 +21,7 @@ public class playerScript : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
 
@@ -29,14 +30,14 @@ public class playerScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left *  playerSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * playerSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
         }
-       
-       
+
+
 
         if (transform.position.x <= -12)
         {
@@ -46,13 +47,13 @@ public class playerScript : MonoBehaviour
         {
             transform.position = new Vector3(-12f, transform.position.y, 5);
         }
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        { 
-            Instantiate (Bullet, this.transform.position, this.transform.rotation); 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(Bullet, this.transform.position, this.transform.rotation);
         }
     }
 
-   public void TakeDamage(int Damage)
+    public void TakeDamage(int Damage)
     {
         health = health - Damage;
         if (health <= 0)
@@ -63,7 +64,7 @@ public class playerScript : MonoBehaviour
         if (health == 3)
         {
             if (GameObject.Find("Life 3") != null)
-            Life3.SetActive(true);
+                Life3.SetActive(true);
             if (GameObject.Find("Life 2") != null)
                 Life2.SetActive(true);
             if (GameObject.Find("Life 1") != null)
@@ -94,8 +95,8 @@ public class playerScript : MonoBehaviour
                 Life3.SetActive(false);
             if (GameObject.Find("Life 2") != null)
                 Life2.SetActive(false);
-                        if (GameObject.Find("Life 1") != null)
-            Life1.SetActive(false);
+            if (GameObject.Find("Life 1") != null)
+                Life1.SetActive(false);
         }
         Life(health);
 
@@ -104,8 +105,8 @@ public class playerScript : MonoBehaviour
     public void Life(int playerHealth)
     {
         Debug.Log("Life");
-        
-        if (playerHealth== 3)
+
+        if (playerHealth == 3)
         {
             if (GameObject.Find("life 3") != null)
                 GameObject.Find("life 3").SetActive(true);
@@ -143,12 +144,26 @@ public class playerScript : MonoBehaviour
                 GameObject.Find("life 1").SetActive(false);
         }
     }
-    
+
     public void GiveShield()
     {
-
+        
     }
-    
+    private void OnTriggerEnter2D(Collider2D Other)
+    {
+        if (Other.tag == "ShieldDrop")
+        {
+            
+
+            //Other.transform.GetComponent<playerScript>().GiveShield();
+
+            Debug.Log("Hit: " + Other);
+
+            Destroy(Other);
+
+        }
+    }
+
 }
 
 
